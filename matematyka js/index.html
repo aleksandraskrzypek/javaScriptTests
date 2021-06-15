@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = "pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Matematyka JS</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+
+    <script>
+
+        document.write(0.1 * 5); document.write("<br />"); 
+        document.write(0.15 * 3); document.write("<br />");
+        document.write(0.1 + 0.2); document.write("<br />");  
+
+        //////
+
+        document.write(Math.pow(2,53)); document.write("<br />"); //maks. int w JS
+        document.write(Math.pow(2,53)+1); document.write("<br />"); //nie działa
+        document.write(Math.pow(2,53)+2); document.write("<br />"); //działa
+        document.write(Math.pow(2,53)*2); document.write("<br />"); //działa
+
+        //////
+
+        if(0.1 + 0.2 == 0.3) document.write("true <br />");
+        else document.write("false <br />");
+
+        //sposób 1
+        var x;
+        x = Math.round((0.1 + 0.2)*10) / 10;
+        document.write(x+"<br/>");
+        x = Math.round((0.15 * 3)*100) / 100;
+        document.write(x+"<br/>");
+
+        //sposób 2
+
+        x= 0.15 * 3;
+        x = x.toFixed(2);
+        document.write(x+"<br/><br/>");
+
+        //////
+
+        x = 1.005;
+        x = Math.round(x*100) / 100;
+        document.write(x+"<br/>");  // -> niedokładność
+
+        x = 1.005;
+        x = x.toFixed(2);
+        document.write(x+"<br/>"); // -> również niedokładność
+
+        //sposób 3
+
+        Number.prototype.round = function(miejsc)
+        {
+            return +(Math.round(this+"e+"+miejsc) + "e-"+miejsc);
+        }
+
+        x = 1.005;
+        x = x.round(2);
+        document.write(x+"<br/>"); // -> dokładność
+
+    </script>
+    
+
+</body>
+    
+</html>
+
+
+

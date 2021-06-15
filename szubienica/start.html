@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Szubienica</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    
+    <script>
+    var haslo = "";
+    function zaczynamy()
+    {
+        haslo = document.getElementById('pole').value;
+        location.href='index.html'
+    }
+    </script>
+
+    <script src ="szubienica.js"></script>
+</head>
+<body>
+
+    <div class="napis_startowy">Witaj w grze Szubienica. Wprowadź swoje hasło i zacznij grę!</div>
+    <div class="guzik"><input type ="text"id="pole" />
+    <input type ="submit" value="Start" onclick= "zaczynamy()"; id="pole2"/></div>
+    
+
+</body>
+    
+</html>
+
+
+
